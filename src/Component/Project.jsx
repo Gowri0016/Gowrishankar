@@ -1,34 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Luxurya from '../Asset/Luxurya.png'
+import Weather from '../Asset/Weather.png'
+import Crowid from '../Asset/Crowd.png'
 
 export default function Project() {
   const projects = [
     {
       id: 1,
-      title: 'Luxury Dashboard',
-      description: 'A sleek, modern dashboard with AI-driven analytics and interactive UI.',
-      imgSrc: 'https://via.placeholder.com/400',
-      gitLink: 'https://github.com/user/luxury-dashboard',
-      role: 'Frontend Developer'
+      title: 'Luxurya',
+      description: 'We are Proud to Introduce our Worthwhile Scheme "LUXURYA TOURS". Which is Situated in COIMBATORE, BENGALURU. Our Service Scheme Comprise for Domestic, International, Inbound and Outbound Tourism, Focus on Educational Tours, Corporate Tours, Leisure Tours and Pilgrimages.',
+      imgSrc: Luxurya, // Using imported image
+      gitLink: 'https://github.com/user/ecommerce-platform',
+      role: 'College & Family Tours Enquery'
     },
     {
       id: 2,
-      title: 'E-Commerce Platform',
-      description: 'A high-performance e-commerce solution with advanced filters and animations.',
-      imgSrc: 'https://via.placeholder.com/400',
-      gitLink: 'https://github.com/user/ecommerce-platform',
-      role: 'Full Stack Developer'
+      title: 'Weather',
+      description: 'For a weather app with minimal content, focus on a clean, uncluttered interface showing the current conditions, a simple forecast for the next few days, and perhaps a weather radar map, while prioritizing speed and ease of use.',
+      imgSrc: Weather, // Using imported image
+      gitLink: 'https://github.com/Gowri0016/Weather',
+      role: 'Weather Checker'
     },
     {
       id: 3,
-      title: 'AI Chatbot',
-      description: 'A conversational AI chatbot integrated with NLP and real-time responses.',
-      imgSrc: 'https://via.placeholder.com/400',
-      gitLink: 'https://github.com/user/ai-chatbot',
-      role: 'AI Engineer'
+      title: 'Crowid',
+      description: 'A secure and transparent crowdfunding platform that connects fundraisers with donors. It ensures seamless transactions, progress tracking, and user engagement through an intuitive interface.Let me know if you need more details! 🚀',
+      imgSrc: Crowid, // Using imported image
+      gitLink: 'https://github.com/Gowri0016/Crowd-Funding',
+      role: 'Crowd-Funding'
     }
   ];
-
+  
   return (
     <div className="p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 bg-gray-900 min-h-screen"> 
       {projects.map((project) => (
