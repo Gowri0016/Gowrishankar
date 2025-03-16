@@ -7,22 +7,6 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  const homenavigate = () =>{
-    navigate('#')
-  } 
-
-  const skilnavigate = () =>{
-    navigate('/Skills')
-  }
-
-  const projnavigate = () => {
-    navigate('/Project')
-  }
-
-  const contnavigate = () => {
-    navigate('/Contact')
-  }
-
   return (
     <header className="w-full fixed top-0 z-50">
       {/* Glowing RGB Background */}
@@ -31,20 +15,19 @@ export default function Header() {
       <nav className="relative container mx-auto flex justify-between items-center h-16 px-6 md:px-10 bg-black bg-opacity-80 shadow-lg rounded-b-lg">
         
         {/* Logo with Scaling Effect */}
-        <motion.p className="text-white font-extrabold text-2xl md:text-3xl tracking-wide" whileHover={{ scale: 1.1 }}>GowriShankar G</motion.p>
+        <motion.p className="text-white font-extrabold text-2xl md:text-3xl tracking-wide" whileHover={{ scale: 1.1 }}>
+          GowriShankar G
+        </motion.p>
 
         {/* Desktop Navigation */}
-        
-
         <div className="hidden md:flex gap-6 text-white font-semibold">
-        <Link to="/" onClick={homenavigate} className="hover:text-blue-400 transition-transform">Home</Link>
-        <Link to="/Skills" onClick={skilnavigate} className="hover:text-blue-400 transition-transform">Skills</Link>
-        <Link to="/Project" onClick={projnavigate} className="hover:text-blue-400 transition-transform">Projects</Link>
-        <Link to="/Contact" onClick={contnavigate} className="hover:text-blue-400 transition-transform">Contact</Link>
+          <Link to="/" className="hover:text-blue-400 transition-transform">Home</Link>
+          <Link to="/Skills" className="hover:text-blue-400 transition-transform">Skills</Link>
+          <Link to="/Project" className="hover:text-blue-400 transition-transform">Projects</Link>
+          <Link to="/Contact" className="hover:text-blue-400 transition-transform">Contact</Link>
         </div>
 
-
-        {/* Mobile Menu Button */}
+        {/* Mobile & MD Menu Button */}
         <button 
           className="md:hidden text-white focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -53,7 +36,23 @@ export default function Header() {
         </button>
       </nav>
 
-
+      {/* Mobile & Medium Screen Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-16 left-0 w-full bg-black bg-opacity-90 shadow-lg flex flex-col items-center space-y-5 py-6 text-white md:hidden"
+          >
+            <Link to="/" className="text-xl font-semibold hover:text-blue-400 transition-transform" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link to="/Skills" className="text-xl font-semibold hover:text-blue-400 transition-transform" onClick={() => setIsOpen(false)}>Skills</Link>
+            <Link to="/Project" className="text-xl font-semibold hover:text-blue-400 transition-transform" onClick={() => setIsOpen(false)}>Projects</Link>
+            <Link to="/Contact" className="text-xl font-semibold hover:text-blue-400 transition-transform" onClick={() => setIsOpen(false)}>Contact</Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

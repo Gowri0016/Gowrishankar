@@ -70,7 +70,7 @@ export default function Details() {
             className="px-6 py-3 text-purple-600 border-2 border-purple-600 rounded-lg shadow-lg hover:bg-purple-600 hover:text-white transform transition-all hover:scale-110"
             whileHover={{ y: -3 }}
           >
-            <a href="#contact" className="block w-full h-full">Contact Me</a>
+            <a href="tel:8056889616" className="block w-full h-full">Contact Me</a>
           </motion.button>
         </div>
       </motion.div>

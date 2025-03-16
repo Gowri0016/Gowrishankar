@@ -26,12 +26,13 @@ const skills = [
 
 export default function Skills() {
   return (
-    <div id="Skills" className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 flex flex-col items-center justify-center px-6 relative overflow-hidden">
-      <h2 className="text-4xl font-extrabold text-white mb-10 drop-shadow-lg tracking-wide">
+    <div id="Skills" className="min-h-screen p-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 flex flex-col items-center justify-center px-6 md:px-12 lg:px-20 relative overflow-hidden">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-12 drop-shadow-lg tracking-wide">
          Skills
       </h2>
 
-      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Responsive Grid Layout */}
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skills.map((skill, index) => (
           <motion.div 
             key={index} 
@@ -65,4 +66,3 @@ export default function Skills() {
     </div>
   );
 }
- 
