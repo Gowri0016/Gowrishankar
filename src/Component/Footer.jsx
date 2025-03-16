@@ -35,8 +35,8 @@ export default function Footer() {
 
           <div>
             <h3 className="text-lg font-semibold mb-2">Contact</h3>
-            <p className="hover:text-gray-300">📞 +91 73580-39616</p>
-            <p className="hover:text-gray-300">✉️ example@email.com</p>
+            <p className="hover:text-gray-300">📞 80568-89616</p>
+            <p className="hover:text-gray-300">✉️ gowridyk3@gmail.com</p>
           </div>
         </div>
 

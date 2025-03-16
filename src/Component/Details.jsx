@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Gowri from '../Asset/Gowri Pro.png';
 
 export default function Details() {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
@@ -30,11 +31,11 @@ export default function Details() {
       >
         {/* Profile Image */}
         <motion.img
-          src="https://via.placeholder.com/150"
-          alt="Gowri Shankar"
-          className="w-32 h-32 mx-auto rounded-full border-4 border-purple-500 shadow-lg transform transition-transform hover:scale-110"
-          style={{ transform: "translateZ(50px)" }}
+              src={Gowri} // Ensure this is the correct image import
+              alt="Gowri Shankar"
+              className="w-full h-44 relative mb-10 mx-auto rounded-full border-4 border-purple-500 shadow-lg transform transition-transform hover:scale-110 object-cover"
         />
+
 
         <h2 className="text-xl font-bold text-white mt-4" style={{ transform: "translateZ(30px)" }}>
           Gowri Shankar
@@ -43,18 +44,6 @@ export default function Details() {
           Full-Stack Web Developer
         </p>
 
-        {/* Social Links */}
-        <div className="flex justify-center space-x-6 mt-4">
-          <a href="#" className="text-purple-500 hover:text-purple-700 transition-transform hover:scale-125">
-            <i className="fab fa-linkedin text-2xl"></i>
-          </a>
-          <a href="#" className="text-white hover:text-gray-400 transition-transform hover:scale-125">
-            <i className="fab fa-github text-2xl"></i>
-          </a>
-          <a href="#" className="text-blue-400 hover:text-blue-600 transition-transform hover:scale-125">
-            <i className="fab fa-twitter text-2xl"></i>
-          </a>
-        </div>
       </motion.div>
 
       {/* Portfolio Section */}
@@ -74,7 +63,7 @@ export default function Details() {
             className="px-6 py-3 text-white bg-purple-600 rounded-lg shadow-lg hover:bg-purple-700 transform transition-all hover:scale-110"
             whileHover={{ y: -3 }}
           >
-            <a href="#projects" className="block w-full h-full">View Projects</a>
+            <a href="/Project" className="block w-full h-full">View Projects</a>
           </motion.button>
 
           <motion.button
