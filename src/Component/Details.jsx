@@ -17,6 +17,13 @@ export default function Details() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 to-black p-6">
+
+            {/* Animated Background */}
+            <div className="absolute top-0 left-0 w-full h-full">
+        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#6B46C1" fillOpacity="0.6" d="M0,128L40,160C80,192,160,256,240,261.3C320,267,400,213,480,208C560,203,640,245,720,256C800,267,880,245,960,218.7C1040,192,1120,160,1200,165.3C1280,171,1360,213,1400,234.7L1440,256L1440,320L0,320Z"></path>
+        </svg>
+      </div>
       
       {/* 3D Animated Profile Card */}
       <motion.div
