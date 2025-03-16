@@ -28,7 +28,7 @@ export default function Skills() {
   return (
     <div id="Skills" className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 flex flex-col items-center justify-center px-6 relative overflow-hidden">
       <h2 className="text-4xl font-extrabold text-white mb-10 drop-shadow-lg tracking-wide">
-        Full-Stack Developer Skills
+         Skills
       </h2>
 
       <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6">

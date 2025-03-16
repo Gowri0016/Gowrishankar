@@ -52,7 +52,7 @@ export default function Footer() {
                     <div>
                         <h3 class="text-gray-700 uppercase dark:text-white">About</h3>
                         <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Company</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">community</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
                         <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
                     </div>
 
@@ -66,13 +66,14 @@ export default function Footer() {
                     <div>
                         <h3 class="text-gray-700 uppercase dark:text-white">Services</h3>
                         <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Ai Web/App</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">SEO</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Social Media</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mobile App Android/IOS</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">SEO Opmization</a>
                     </div>
 
                     <div>
                         <h3 class="text-gray-700 uppercase dark:text-white">Contact</h3>
-                        <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+91 80568-89616</span>
+                        <a href="tel:+917358039616" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+91 73580-39616</a>
+
                         <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">example@email.com</span>
                     </div>
                 </div>

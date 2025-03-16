@@ -1,63 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Gowri from '../Asset/Gori4.jpeg'
 
 export default function Details() {
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+
+    const rotateX = (clientY / innerHeight - 0.5) * 20; // Adjust tilt range
+    const rotateY = (clientX / innerWidth - 0.5) * -20;
+
+    setRotate({ x: rotateX, y: rotateY });
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 to-black p-6">
+      
       {/* 3D Animated Profile Card */}
       <motion.div
-        className="relative bg-white bg-opacity-10 backdrop-blur-md p-8 rounded-xl shadow-lg border border-gray-700 max-w-xs text-center"
-        whileHover={{ scale: 1.05, rotateY: 5, rotateX: 5 }}
-        transition={{ duration: 0.5 }}
+        className="relative bg-white bg-opacity-20 backdrop-blur-lg p-8 rounded-2xl shadow-2xl border border-gray-600 max-w-xs text-center"
+        style={{
+          transformStyle: "preserve-3d",
+          transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={() => setRotate({ x: 0, y: 0 })}
+        transition={{ duration: 0.3 }}
       >
         {/* Profile Image */}
         <motion.img
-          src={Gowri}
-          className="w-32 h-32 mx-auto rounded-full border-4 border-blue-500 shadow-lg"
-          whileHover={{ scale: 1.1 }}
+          src="https://via.placeholder.com/150"
+          alt="Gowri Shankar"
+          className="w-32 h-32 mx-auto rounded-full border-4 border-purple-500 shadow-lg transform transition-transform hover:scale-110"
+          style={{ transform: "translateZ(50px)" }}
         />
-        
-        <p className="text-gray-300">Full-Stack Web Developer</p>
+
+        <h2 className="text-xl font-bold text-white mt-4" style={{ transform: "translateZ(30px)" }}>
+          Gowri Shankar
+        </h2>
+        <p className="text-gray-300 text-sm" style={{ transform: "translateZ(20px)" }}>
+          Full-Stack Web Developer
+        </p>
 
         {/* Social Links */}
-        <div className="flex justify-center space-x-4 mt-4">
-          <a href="#" className="text-blue-500 hover:text-blue-700 transition">
+        <div className="flex justify-center space-x-6 mt-4">
+          <a href="#" className="text-purple-500 hover:text-purple-700 transition-transform hover:scale-125">
             <i className="fab fa-linkedin text-2xl"></i>
           </a>
-          <a href="#" className="text-white hover:text-gray-300 transition">
+          <a href="#" className="text-white hover:text-gray-400 transition-transform hover:scale-125">
             <i className="fab fa-github text-2xl"></i>
           </a>
-          <a href="#" className="text-blue-400 hover:text-blue-600 transition">
+          <a href="#" className="text-blue-400 hover:text-blue-600 transition-transform hover:scale-125">
             <i className="fab fa-twitter text-2xl"></i>
           </a>
         </div>
       </motion.div>
 
       {/* Portfolio Section */}
-      <div className="mt-8 bg-white p-8 rounded-lg shadow-md w-full max-w-2xl text-center">
-        <h1 className="text-3xl font-bold text-gray-900">Welcome to My Portfolio!</h1>
-        <p className="text-gray-700 mt-4">
-          My name is Gowri Shankar, and I'm a web developer. I finished two projects in (React.jsx).
-          My specialty is helping businesses stand out by creating visually appealing and user-friendly websites.
+      <motion.div 
+        className="mt-10 bg-white bg-opacity-10 backdrop-blur-xl p-10 rounded-2xl shadow-xl border border-gray-700 w-full max-w-2xl text-center relative"
+        whileHover={{ scale: 1.02 }}
+      >
+        <h1 className="text-4xl font-extrabold text-white drop-shadow-lg">Explore My Work</h1>
+        <p className="text-gray-300 mt-4">
+          I specialize in crafting dynamic and visually appealing web applications.
+          With expertise in React.js and modern web technologies, I build digital experiences that leave an impact.
         </p>
 
         {/* Buttons */}
         <div className="mt-6 flex justify-center space-x-4">
           <motion.button
-            className="px-6 py-2 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-700 transition"
-            whileHover={{ scale: 1.1 }}
+            className="px-6 py-3 text-white bg-purple-600 rounded-lg shadow-lg hover:bg-purple-700 transform transition-all hover:scale-110"
+            whileHover={{ y: -3 }}
           >
-            Learn
+            <a href="#projects" className="block w-full h-full">View Projects</a>
           </motion.button>
+
           <motion.button
-            className="px-6 py-2 text-blue-600 border-2 border-blue-600 rounded-md shadow-md hover:bg-blue-600 hover:text-white transition"
-            whileHover={{ scale: 1.1 }}
+            className="px-6 py-3 text-purple-600 border-2 border-purple-600 rounded-lg shadow-lg hover:bg-purple-600 hover:text-white transform transition-all hover:scale-110"
+            whileHover={{ y: -3 }}
           >
-            Visit
+            <a href="#contact" className="block w-full h-full">Contact Me</a>
           </motion.button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
