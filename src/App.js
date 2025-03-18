@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+// import Splashcrusor from '../src/Component/Splashcrusor'
 import Contact from './Component/Contact';
 import Details from './Component/Details';
 import Footer from './Component/Footer';
@@ -17,6 +18,7 @@ function App() {
         <Route path="/project" element={<Project />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      {/* <Splashcrusor /> */}
       <Footer />
     </div>
   );

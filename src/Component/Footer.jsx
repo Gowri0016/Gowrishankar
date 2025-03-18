@@ -59,7 +59,7 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="mt-10 border-t border-gray-400 pt-4 text-center">
-          <p className="text-gray-300">&copy; Poeage 2024 - All rights reserved</p>
+          <p className="text-gray-300">&copy; Thank for Vi  sit!!...</p>
         </div>
       </div>
     </footer>
